@@ -27,7 +27,6 @@ var Index = function Index() {
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/about",
-    title: "About Page",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
@@ -53,4 +52,4 @@ var Index = function Index() {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.e484dca6897457429f0e.hot-update.js.map
+//# sourceMappingURL=index.js.031cc5ee0d1c5a15e731.hot-update.js.map
