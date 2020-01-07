@@ -5157,7 +5157,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/student/Desktop/gitprojects/hello-next/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/edcourage/Projects/afternoon_work_makers/Crawl/.next");
       return error;
     }
   };
