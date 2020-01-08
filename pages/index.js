@@ -1,27 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import Link from 'next/link';
+import Layout from '../components/layout'
 
-
-function FindPubsLink(props) {
-  return (
+const Index = () => (
+  <Layout>
+    <div>
     <Link href="/map">
-      <a>{props.name}</a>
+      <a>Find Pubs Near Me</a>
     </Link>
-  )
-}
-
-class HomePage extends React.Component {
-  render() {
-    return (
-      <div class="homePage">
-      <FindPubsLink
-      name={ "Find Pubs Near Me" }
-    />
     </div>
-    )
+  </Layout>
+)
 
-  }
-}
 
-export default HomePage;
+export default Index;
