@@ -14,8 +14,4 @@ describe('Layout', function() {
 
   })
 
-
-
-
-
 })

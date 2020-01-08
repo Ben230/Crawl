@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 // import ReactDOM from 'react-dom';
 import Link from 'next/link';
 import Layout from '../components/layout'
