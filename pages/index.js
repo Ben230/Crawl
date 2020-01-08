@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import React from 'react';
 import Layout from '../components/layout'
 
 const Index = () => (
-  <Layout>
+  <Layout titleName={"Crawl"}>
     <div>
     <Link href="/map">
       <a>Find Pubs Near Me</a>
