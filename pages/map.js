@@ -17,13 +17,12 @@ const MapView = (props) => (
 );
 
 MapView.getInitialProps = async function() {
-  const res = await fetch
-  ('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ');
+  const res = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ', { mode: "no-cors"});
   const data = await res.json();
 
   return {
     gmapjson: data
-  };
+  }
 }
 
 export default MapView;
