@@ -3,7 +3,7 @@ import Head from 'next/head'
 const Layout = (props) => (
   <div className='root'>
     <Head>
-    <title>Crawl</title>
+    <title>{props.titleName}</title>
     </Head>
         {props.children}
       </div>
