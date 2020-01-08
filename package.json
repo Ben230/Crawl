@@ -5,17 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "start-server": "next",
     "build": "next build",
     "start": "next start",
     "cypress:open": "cypress open",
-    "test": "jest",
-    "cypress:run": "cypress run",
-    "test:jest": "jest",
-    "test:cy": "npm run dev; npm run cypress:run",
-    "start-server": "next",
-        "test": "cypress run",
-        "ci": "start-server-and-test start-server http://localhost:3000 test"
-
+    "test": "cypress run",
+    "test:unit": "jest",
+    "test:features": "start-server-and-test start-server http://localhost:3000 test",
+    "test:all": "start-server-and-test start-server http://localhost:3000 test && jest"
   },
   "keywords": [],
   "author": "",
