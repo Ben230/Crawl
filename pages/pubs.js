@@ -9,7 +9,7 @@ const PubsSearch = (props) => (
   <ul>
   {
     props.pubs.map(pub => (
-    <li>{pub.name}</li>
+    <li key={pub.id}>{pub.name}</li>
   )
  )
 }
@@ -21,7 +21,7 @@ const PubsSearch = (props) => (
 
 
 PubsSearch.getInitialProps = async function() {
-  const res = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=AIzaSyC3T0o3mejJzeoQMxzpk0aRhXfo4mVPpkQ');
+  const res = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=${process.env.GOOGLE_MAPS_API_KEY}`);
   const data = await res.json();
 
   // console.log(`Show data fetched. Count: ${data}`);
