@@ -28,14 +28,5 @@ class Map extends Component {
    }
 };
 
-// Map.getInitialProps = async function() {
-//   const res = await fetch("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=AIzaSyC3T0o3mejJzeoQMxzpk0aRhXfo4mVPpkQ");
-//   const data = await res.json();
-//   console.log("hi");
-//   console.log(data);
-//
-//   return {
-//     shows: data.map(entry => entry.show)
-//   };
-// };
+
 export default Map;
