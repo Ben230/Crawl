@@ -3,9 +3,9 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps
 import fetch from 'isomorphic-unfetch';
 import useSWR from 'swr';
 
-function fetcher(url) {
-  return fetch(url).then(r => r.json());
-}
+// function fetcher(url) {
+//   return fetch(url).then(r => r.json());
+// }
 
 class Map extends Component {
    render() {
@@ -19,7 +19,7 @@ class Map extends Component {
     </GoogleMap>
   ));
 
-    const { data, error } = useSWR('/api/google-api', fetcher);
+
    return(
       <div>
         <GoogleMapExample
