@@ -5,7 +5,13 @@ import Layout from '../components/layout'
 import Map from '../components/Map'
 // const fetch = require("node-fetch");
 
+
+function fetcher(url) {
+  return fetch(url).then(r => r.json());
+}
+
 const MapView = (props) => (
+  const { data, error } = useSWR('/api/google-api', fetcher);
 <Layout titleName={"Map View"}>
   <h1>Map!</h1>
   {

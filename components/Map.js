@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import fetch from 'isomorphic-unfetch';
+import useSWR from 'swr';
 
+function fetcher(url) {
+  return fetch(url).then(r => r.json());
+}
 
 class Map extends Component {
    render() {
@@ -14,6 +18,8 @@ class Map extends Component {
           {<Marker position={{ lat: 51.5176, lng: -0.072768 }} />}
     </GoogleMap>
   ));
+
+    const { data, error } = useSWR('/api/google-api', fetcher);
    return(
       <div>
         <GoogleMapExample
@@ -23,6 +29,7 @@ class Map extends Component {
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         />
+        {data}
       </div>
    );
    }
