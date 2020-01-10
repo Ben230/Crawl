@@ -1,32 +1,51 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import fetch from 'isomorphic-unfetch';
+import useSWR from 'swr';
 
+// function fetcher(url) {
+//   return fetch(url).then(r => r.json());
+// }
 
 class Map extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {pubs:[]}
+  }
+
+
+  componentDidMount(){
+    console.log("Method runs!")
+    fetch(`/api/pubs`)
+    .then(response => response.json())
+    .then(result => {
+      var pubsArray = result.myJson.results
+      this.setState({pubs:pubsArray})
+    } );
+
+  }
+
    render() {
-   const GoogleMapExample = withScriptjs(withGoogleMap((props) =>
+   const GoogleMapContainer = withGoogleMap(props => (
      <GoogleMap
-        defaultCenter = { { lat: 51.5176597, lng: -0.072768 } }
-        defaultZoom = { 16 }
-        >
-          {<Marker position={{ lat: 51.5176597, lng: -0.072768 }} />}
-          {<Marker position={{ lat: 51.5176, lng: -0.072768 }} />}
+        defaultCenter = { { lat: 51.516967, lng: -0.073133 } }
+        defaultZoom = { 14 }>
+        {this.state.pubs.map(pub => (
+          <Marker position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }} />
+        ))}
+
     </GoogleMap>
   ));
    return(
       <div>
-        <GoogleMapExample
-        isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+
+        <GoogleMapContainer
+          containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+          mapElement={ <div style={{ height: `100%` }} /> }
         />
       </div>
    );
    }
 };
-
 
 export default Map;
