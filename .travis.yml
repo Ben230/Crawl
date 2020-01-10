@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "13.5.0"
+cache: node_modules
+script:
+  - echo 'Build starts!!'
+  - echo 'Installing Deps!'
+  - npm install
+  - echo 'Testing!'
+  - npm run test:all
