@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+      "node": "13.5.0"
+  },
   "scripts": {
     "dev": "next",
     "start-server": "next",
