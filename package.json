@@ -7,7 +7,7 @@
     "dev": "next",
     "start-server": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "cypress:open": "cypress open",
     "test": "cypress run",
     "test:unit": "jest",
