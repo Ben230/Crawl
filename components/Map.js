@@ -16,7 +16,7 @@ class Map extends Component {
 
   componentDidMount(){
     console.log("Method runs!")
-    fetch(`http://localhost:3000/api/google-api`)
+    fetch(`/api/pubs`)
     .then(response => response.json())
     .then(result => {
       var pubsArray = result.myJson.results

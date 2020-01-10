@@ -15,6 +15,3 @@ const Layout = (props) => (
 )
 
 export default Layout;
-
-
-// AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ

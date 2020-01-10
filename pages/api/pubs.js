@@ -7,7 +7,6 @@ export default (req, res) => {
     return response.json();
   })
   .then((myJson) => {
-    console.log(myJson);
     res.status(200).json({
       myJson
     });

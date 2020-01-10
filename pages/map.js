@@ -15,7 +15,6 @@ const MapView = (props) => (
 <Layout titleName={"Map View"}>
   <h1>Map!</h1>
   <Map/>
-  <p> env {process.env.GOOGLE_MAPS_API_KEY} </p>
   </Layout>
 
 );
