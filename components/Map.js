@@ -8,6 +8,16 @@ import useSWR from 'swr';
 // }
 
 class Map extends Component {
+
+  componentDidMount(){
+    console.log("Method runs!")
+    fetch(`http://localhost:3000/api/google-api`)
+    .then((response) => {
+      console.log("Worked!")
+      console.log(response.json());
+    })
+  }
+
    render() {
    const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
