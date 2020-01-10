@@ -18,7 +18,7 @@ class Map extends Component {
       <div>
         <GoogleMapExample
         isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ&libraries=geometry,drawing,places"
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Iu-y7M7tk12ahsnahnYYBj1i8NWUjOw&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
