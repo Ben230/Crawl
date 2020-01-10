@@ -30,7 +30,7 @@ class Map extends Component {
    render() {
    const GoogleMapExample = withGoogleMap(props => (
      <GoogleMap
-        defaultCenter = { { lat: 51.5176597, lng: -0.072768 } }
+        defaultCenter = { { lat: 51.516967, lng: -0.073133 } }
         defaultZoom = { 14 }>
         {this.state.pubs.map(pub => (
           <Marker position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }} />
