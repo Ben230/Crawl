@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Layout from '../components/layout'
 import Map from '../components/Map'
-// const fetch = require("node-fetch");
+
 
 
 function fetcher(url) {
@@ -11,7 +11,7 @@ function fetcher(url) {
 }
 
 const MapView = (props) => (
-  const { data, error } = useSWR('/api/google-api', fetcher);
+
 <Layout titleName={"Map View"}>
   <h1>Map!</h1>
   {
@@ -20,13 +20,14 @@ const MapView = (props) => (
     ))
   }
   <Map/>
+  <p> env {process.env.GOOGLE_MAPS_API_KEY} </p>
   </Layout>
 
 );
 
 MapView.getInitialProps = async function() {
-  // console.log('helo')
-  const res = await fetch("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ");
+
+  const res = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.5176597,-0.072768&radius=1500&keyword=pub&key=${process.env.GOOGLE_MAPS_API_KEY}`);
   const data = await res.json();
   // console.log("hi");
   // console.log(data);
