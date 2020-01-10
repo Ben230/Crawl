@@ -8,6 +8,7 @@
     "start-server": "next",
     "build": "next build",
     "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
     "cypress:open": "cypress open",
     "test": "cypress run",
     "test:unit": "jest",
