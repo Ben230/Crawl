@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import Geolocation from './geolocation'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import fetch from 'isomorphic-unfetch';
 import useSWR from 'swr';
+
+
 
 // function fetcher(url) {
 //   return fetch(url).then(r => r.json());
@@ -10,7 +13,10 @@ import useSWR from 'swr';
 class MapView extends Component {
   constructor(props) {
     super(props)
-    this.state = {pubs:[]}
+    this.state = {pubs:[],
+      centerLat: 51.516967,
+      centerLng: -0.073133,
+      zoom: 14}
   }
 
 
@@ -27,8 +33,8 @@ class MapView extends Component {
   }
 
   static defaultProps = {
-    defaultLat: 51.516967,
-    defaultLng: -0.073133,
+    centerLat: 51.516967,
+    centerLng: -0.073133,
     zoom: 14
   }
 
@@ -36,14 +42,15 @@ class MapView extends Component {
    render() {
      const GoogleMapContainer = withGoogleMap(props => (
        <GoogleMap
-          defaultCenter = { { lat: this.props.defaultLat, lng: this.props.defaultLng } }
-          defaultZoom = { this.props.zoom }>
+          defaultCenter = { { lat: this.state.centerLat, lng: this.state.centerLng } }
+          defaultZoom = { this.state.zoom }>
           {this.state.pubs.map(pub => (
             <Marker position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }} />
           ))}
 
       </GoogleMap>
       ));
+
        return(
           <div>
 

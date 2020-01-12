@@ -8,13 +8,13 @@ import MapView from '../components/mapView'
 
 describe('MapView', function() {
 
-  it ("has a defult lat,long and zoom props", function() {
+  it ("has defult lat,long and zoom state", function() {
     const component = create(<MapView />);
        const instance = component.getInstance();
 
-    expect(instance.props.defaultLat).toBe(51.516967);
-    expect(instance.props.defaultLng).toBe(-0.073133);
-    expect(instance.props.zoom).toBe(14);
+    expect(instance.state.centerLat).toBe(51.516967);
+    expect(instance.state.centerLng).toBe(-0.073133);
+    expect(instance.state.zoom).toBe(14);
   })
 
 })
