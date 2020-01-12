@@ -7,11 +7,12 @@ import useSWR from 'swr';
 //   return fetch(url).then(r => r.json());
 // }
 
-class Map extends Component {
+class MapView extends Component {
   constructor(props) {
     super(props)
     this.state = {pubs:[]}
   }
+
 
 
   componentDidMount(){
@@ -25,27 +26,38 @@ class Map extends Component {
 
   }
 
+  static defaultProps = {
+    defaultLat: 51.516967,
+    defaultLng: -0.073133,
+    zoom: 14
+  }
+
+
    render() {
-   const GoogleMapContainer = withGoogleMap(props => (
-     <GoogleMap
-        defaultCenter = { { lat: 51.516967, lng: -0.073133 } }
-        defaultZoom = { 14 }>
-        {this.state.pubs.map(pub => (
-          <Marker position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }} />
-        ))}
+     const GoogleMapContainer = withGoogleMap(props => (
+       <GoogleMap
+          defaultCenter = { { lat: this.props.defaultLat, lng: this.props.defaultLng } }
+          defaultZoom = { this.props.zoom }>
+          {this.state.pubs.map(pub => (
+            <Marker position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }} />
+          ))}
 
-    </GoogleMap>
-  ));
-   return(
-      <div>
+      </GoogleMap>
+      ));
+       return(
+          <div>
 
-        <GoogleMapContainer
-          containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
-        />
-      </div>
-   );
+            <GoogleMapContainer
+              containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+              mapElement={ <div style={{ height: `100%` }} /> }
+            />
+
+          </div>
+       );
    }
+
 };
 
-export default Map;
+
+
+export default MapView;
