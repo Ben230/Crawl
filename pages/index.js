@@ -8,6 +8,8 @@ const Index = () => (
     <Link href="/map">
       <a>Find Pubs Near Me!</a>
     </Link>
+    <p>{process.env.GOOGLE_MAPS_API_KEY_CLIENT}</p>
+    <p>{process.env.GOOGLE_MAPS_API_KEY_SERVER}</p>
     </div>
   </Layout>
 )
