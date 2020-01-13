@@ -2,9 +2,9 @@ import fetch from 'isomorphic-unfetch';
 
 export default (req, res) => {
 
-    console.log('in api')
-    console.log(process.env.GOOGLE_MAPS_API_KEY_SERVER)
-    console.log(process.env.GOOGLE_MAPS_API_KEY_CLIENT)
+    // console.log('in api')
+    // console.log(process.env.GOOGLE_MAPS_API_KEY_SERVER)
+    // console.log(process.env.GOOGLE_MAPS_API_KEY_CLIENT)
 
 
 
