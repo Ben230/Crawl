@@ -1,7 +1,8 @@
 {
   "build": {
     "env": {
-      "GOOGLE_MAPS_API_KEY": "@maps_api_key"
+      "GOOGLE_MAPS_API_KEY_CLIENT": "@maps_api_key",
+      "GOOGLE_MAPS_API_KEY_SERVER": "@maps_api_key"
     }
   }
 
