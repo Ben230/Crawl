@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Layout from '../components/layout'
 import MapView from '../components/mapView'
-
+import CurrentLocationMap from '../components/currentLocationMap'
 
 
 function fetcher(url) {
@@ -14,12 +14,11 @@ const PubSearchResults = (props) => (
 
 <Layout titleName={"Map View"}>
   <h1>Map!</h1>
-  <MapView/>
+  
+  <CurrentLocationMap/>
   </Layout>
 
 );
-
-
 
 
 export default PubSearchResults;
