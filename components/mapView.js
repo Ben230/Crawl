@@ -20,7 +20,8 @@ class MapView extends Component {
 
   static defaultProps = {
     centerLat: 51.516967,
-    centerLng: -0.073133
+    centerLng: -0.073133,
+    zoom: 6
   }
 
 
@@ -33,13 +34,16 @@ class MapView extends Component {
       this.setState({pubs:pubsArray})
     } );
 
+
+
   }
 
   render() {
+
      const GoogleMapContainer = withGoogleMap(props => (
        <GoogleMap
           defaultCenter = { { lat: this.props.centerLat, lng: this.props.centerLng } }
-          defaultZoom = { this.state.zoom }>
+          defaultZoom = { this.props.zoom }>
           {this.state.pubs.map(pub => (
             <Marker position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }} />
           ))}
