@@ -9,7 +9,9 @@ class CurrentLocationMap extends React.Component {
   render() {
       // this.returnLatLng()
     return  this.props.isGeolocationAvailable ?
+        // Geolocation Available / browser supports the Geolocation API == true
         this.props.isGeolocationEnabled ?
+        // Geolocation Enable / User has allowed the use of the Geolocation API == true
         this.props.coords ? (
           <div>
           <MapView centerLat={this.props.coords.latitude} centerLng={this.props.coords.longitude}/>
@@ -18,19 +20,18 @@ class CurrentLocationMap extends React.Component {
           <div>
             <p>Loading Map...</p>
           </div>
-        ) : (
-          <div>
-          <p>Current Location not enabled</p>
-
-            </div>
         ) :
+        // Geolocation Enable / User has allowed the use of the Geolocation API == false
+        (
+          <div>
+            <MapView/>
+          </div>
+        ) :
+        // Geolocation Available / browser supports the Geolocation API == false
          (
-
            <div>
-
-             <MapView/>
-
-           </div>
+              <MapView/>
+            </div>
          );
       }
 
