@@ -20,5 +20,4 @@ const PubSearchResults = (props) => (
 
 );
 
-
 export default PubSearchResults;

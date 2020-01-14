@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'next/router';
 import Layout from '../components/layout';
+import MapWithADirectionsRenderer from '../components/directionsMap'
 
 function About({ router: { query } }) {
   if (query.selectedPubs) {
@@ -8,6 +9,7 @@ function About({ router: { query } }) {
     console.log(object)
     return (
       <div>
+          <MapWithADirectionsRenderer pubsArray={object} />
         {object.map(pub => (
 
           pub.name
