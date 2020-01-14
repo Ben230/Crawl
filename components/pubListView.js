@@ -5,6 +5,9 @@ import ButtonWithObj from './buttonWithObj';
 class PubListView extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      buttonIsHidden: true
+    }
 
   };
 
@@ -24,7 +27,7 @@ class PubListView extends React.Component {
 
       </div>
 
-      <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>
+      {!this.props.buttonIsHidden && <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>}
       </div>
 
     )

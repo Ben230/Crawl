@@ -3,7 +3,6 @@ import CurrentLocationMap from './currentLocationMap'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 import fetch from 'isomorphic-unfetch';
-import useSWR from 'swr';
 import PubListView from './pubListView'
 
 class MapView extends Component {
@@ -67,7 +66,7 @@ class MapView extends Component {
               mapElement={ <div style={{ height: `100%` }} /> }
             />
 
-            <PubListView pubs={this.state.pubsForRoute} />
+            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
 
           </div>
        );
