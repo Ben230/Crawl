@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'next/router';
 import Layout from '../components/layout';
 import MapWithADirectionsRenderer from '../components/directionsMap'
+import PubListView from '../components/pubListView'
 
 function About({ router: { query } }) {
   if (query.selectedPubs) {
@@ -9,12 +10,8 @@ function About({ router: { query } }) {
     console.log(object)
     return (
       <div>
-          <MapWithADirectionsRenderer pubsArray={object} />
-        {object.map(pub => (
-
-          pub.name
-
-        ))}
+          <MapWithADirectionsRenderer pubs={object} />
+        <PubListView pubs={object} />
       </div>
     );
   } else {
