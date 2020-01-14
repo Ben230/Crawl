@@ -34,7 +34,6 @@ class MapView extends Component {
   handleClick (pubID){
     this.setState({
       pubsForRoute: [...this.state.pubsForRoute, pubID]
-      // pubsForRoute: 'hello'
     })
   }
 
@@ -66,7 +65,7 @@ class MapView extends Component {
               mapElement={ <div style={{ height: `100%` }} /> }
             />
 
-            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
+            
 
           </div>
        );

@@ -14,21 +14,18 @@ class PubListView extends React.Component {
   render() {
     return(
       <div>
-      <div>
 
-        {this.props.pubs.map(pub =>(
+      {this.props.pubs.map(pub =>(
         <div id={pub.id}>
-          <p >{pub.name}</p>
-          <p >Pub Rating: {pub.rating}</p>
-          <p >address: {pub.vicinity}</p>
+        <h3 >{pub.name}</h3>
+        <p >Pub Rating: {pub.rating}</p>
+        <p >address: {pub.vicinity}</p>
         </div>
-        )
-      )}
+      )
+    )}
 
-      </div>
-
-      {!this.props.buttonIsHidden && <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>}
-      </div>
+    {!this.props.buttonIsHidden && <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>}
+    </div>
 
     )
   }

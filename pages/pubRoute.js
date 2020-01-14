@@ -7,11 +7,10 @@ import PubListView from '../components/pubListView'
 function About({ router: { query } }) {
   if (query.selectedPubs) {
     const object = JSON.parse(query.selectedPubs);
-  
+
     return (
       <div>
           <MapWithADirectionsRenderer pubs={object} />
-          <PubListView pubs={object} buttonIsHidden={true} />
       </div>
     );
   } else {
