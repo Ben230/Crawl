@@ -1,0 +1,22 @@
+import fetch from 'isomorphic-unfetch';
+
+export default (req, res) => {
+
+    // console.log('in api')
+    // console.log(process.env.GOOGLE_MAPS_API_KEY_SERVER)
+    // console.log(process.env.GOOGLE_MAPS_API_KEY_CLIENT)
+
+
+
+
+  fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.516967,-0.073133&radius=400&keyword=pub&key=${process.env.GOOGLE_MAPS_API_KEY_SERVER}`)
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    res.status(200).json({
+      myJson
+    });
+  })
+
+};
