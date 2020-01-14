@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'next/router';
+import Layout from '../components/layout';
 
 function About({ router: { query } }) {
   if (query.selectedPubs) {
@@ -14,6 +15,12 @@ function About({ router: { query } }) {
         ))}
       </div>
     );
+  } else {
+    return (
+    <Layout titleName={"Crawl Route"}>
+      <h1>crawl route</h1>
+    </Layout>
+  )
   }
 
 }
