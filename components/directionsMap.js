@@ -20,20 +20,23 @@ const MapWithADirectionsRenderer = compose(
   lifecycle({
     componentDidMount(props) {
       const DirectionsService = new google.maps.DirectionsService();
-      console.log('props',this.props)
+
       var origin ={'placeId': this.props.pubsArray.results[0].place_id}
-      var destination ={'placeId': this.props.pubsArray.results[this.props.pubsArray.results.length -1].place_id}
+      var arrayLength = this.props.pubsArray.results.length -1
+      var destination ={
+        'placeId':
+        this.props.pubsArray.results[ arrayLength ].place_id
+      }
+
       var waypoints = [];
       var i;
-      for (i=1; i<this.props.pubsArray.results.length -1; i++) {
-          console.log("in loop")
+      for (i = 1; i < arrayLength; i++) {
         var waypoint = {
-        location: {'placeId': `${this.props.pubsArray.results[i].place_id}`}
-      }
+          location: {'placeId': `${this.props.pubsArray.results[i].place_id}`}
+        }
         waypoints.push(waypoint)
       }
 
-      console.log('waypoints',waypoints)
       DirectionsService.route({
         origin: origin,
         destination: destination,
@@ -55,12 +58,9 @@ const MapWithADirectionsRenderer = compose(
 )(props =>
   <GoogleMap
     defaultZoom={7}
-    defaultCenter={new google.maps.LatLng(51.51935599999999,-0.074303)}
+    defaultCenter={origin}
   >
     {props.directions && <DirectionsRenderer directions={props.directions} />}
-    <p>
-  {props.pubs}
-  </p>
   </GoogleMap>
 
 );
