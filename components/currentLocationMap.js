@@ -12,6 +12,7 @@ class CurrentLocationMap extends React.Component {
 
 componentDidMount(){
   var currentLocationMap = this
+  console.log("Location method run")
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       console.log("Location method run")
