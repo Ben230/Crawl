@@ -33,7 +33,6 @@ class MapView extends Component {
   }
 
   handleClick (pubID){
-    console.log('id', pubID)
     this.setState({
       pubsForRoute: [...this.state.pubsForRoute, pubID]
       // pubsForRoute: 'hello'

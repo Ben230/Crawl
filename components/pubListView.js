@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 class PubListView extends React.Component {
   constructor(props) {
@@ -15,6 +16,9 @@ class PubListView extends React.Component {
         )
       )}
         </ul>
+        <Link href={{ pathname: '/pubRoute', query: { selectedPubs: JSON.stringify(this.props.pubs)  } }}>
+        <button>Calculate route!</button>
+        </Link>
       </div>
     )
   }
