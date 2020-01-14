@@ -4,7 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps
 const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 import fetch from 'isomorphic-unfetch';
 import useSWR from 'swr';
-import PubListView from './PubListView'
+import PubListView from './pubListView'
 
 class MapView extends Component {
   constructor(props) {
