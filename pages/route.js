@@ -14,7 +14,7 @@ const Route = (props) => (
 
 <Layout titleName={"Map View"}>
   <h1>Map!</h1>
-    <MapWithADirectionsRenderer />
+    <MapWithADirectionsRenderer originlat={51.520155} originlng={-0.07425459999999999}/>
   </Layout>
 
 );

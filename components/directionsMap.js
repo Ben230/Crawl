@@ -18,13 +18,33 @@ const MapWithADirectionsRenderer = compose(
   withScriptjs,
   withGoogleMap,
   lifecycle({
-    componentDidMount() {
+    componentDidMount(props) {
       const DirectionsService = new google.maps.DirectionsService();
+      console.log('props',this.props)
+      //51.5168921
+      //-0.0730285
 
+      var waypoints = [{
+        location: new google.maps.LatLng(51.5168921,-0.0730285),
+        stopover: false
+      },
+      {
+        location: new google.maps.LatLng(51.5188976,-0.0711718),
+        stopover: false
+      },
+      {
+        location: new google.maps.LatLng(51.515832,-0.0708476),
+        stopover: false
+      }
+    ]
       DirectionsService.route({
-        origin: new google.maps.LatLng(41.8507300, -87.6512600),
-        destination: new google.maps.LatLng(41.8525800, -87.6514100),
-        travelMode: google.maps.TravelMode.DRIVING,
+        origin: new google.maps.LatLng(this.props.originlat, this.props.originlng),
+        destination: new google.maps.LatLng(51.5158977,-0.0756678),
+
+        waypoints: waypoints,
+        optimizeWaypoints: true,
+        travelMode: 'WALKING'
+
       }, (result, status) => {
         if (status === google.maps.DirectionsStatus.OK) {
           this.setState({
@@ -39,9 +59,13 @@ const MapWithADirectionsRenderer = compose(
 )(props =>
   <GoogleMap
     defaultZoom={7}
-    defaultCenter={new google.maps.LatLng(41.8507300, -87.6512600)}
+    defaultCenter={new google.maps.LatLng(51.51935599999999,-0.074303)}
   >
     {props.directions && <DirectionsRenderer directions={props.directions} />}
+    <p>
+  {props.pubs}
+  </p>
   </GoogleMap>
+
 );
 export default MapWithADirectionsRenderer;
