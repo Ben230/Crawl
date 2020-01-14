@@ -34,15 +34,11 @@ const MapWithADirectionsRenderer = compose(
       }
 
       console.log('waypoints',waypoints)
-    //   var waypoints = [
-    //     {location: {'placeId': `${this.props.pubsArray.results[1].place_id}`}},
-    //   {location: {'placeId': "ChIJ4-6PJ7QcdkgRLlAsVjwGdf8"}},
-    // ]
       DirectionsService.route({
         origin: origin,
         destination: destination,
         waypoints: waypoints,
-        //optimizeWaypoints: true,
+        optimizeWaypoints: true,
         travelMode: 'WALKING'
 
       }, (result, status) => {
