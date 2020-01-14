@@ -10,7 +10,7 @@
     "dev": "next",
     "start-server": "next",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start -p $PORT & wait-on http://localhost:3000",
     "heroku-postbuild": "npm run build",
     "cypress:open": "cypress open",
     "test": "cypress run",
