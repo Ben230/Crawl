@@ -112,7 +112,9 @@ __webpack_require__.r(__webpack_exports__);
 var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, props.titleName)), props.children);
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, props.titleName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    src: "https://maps.googleapis.com/maps/api/js?key=".concat("AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ", "&libraries=geometry,drawing,places")
+  })), props.children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -2511,7 +2513,7 @@ var Index = function Index() {
     titleName: "Crawl"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_0___default.a, {
     href: "/map"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", null, "Find Pubs Near Me"))));
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", null, "Find Pubs Near Me!")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "AIzaSyA2tah7a3BQ0UGTg668mtESmzbqjyv_AJQ")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
