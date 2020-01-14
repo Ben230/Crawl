@@ -16,7 +16,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/route": [
+    "/map": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/pubRoute": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

@@ -21,18 +21,18 @@ const MapWithADirectionsRenderer = compose(
     componentDidMount(props) {
       const DirectionsService = new google.maps.DirectionsService();
 
-      var origin ={'placeId': this.props.pubsArray.results[0].place_id}
-      var arrayLength = this.props.pubsArray.results.length -1
+      var origin ={'placeId': this.props.pubsArray[0].place_id}
+      var arrayLength = this.props.pubsArray.length -1
       var destination ={
         'placeId':
-        this.props.pubsArray.results[ arrayLength ].place_id
+        this.props.pubsArray[ arrayLength ].place_id
       }
 
       var waypoints = [];
       var i;
       for (i = 1; i < arrayLength; i++) {
         var waypoint = {
-          location: {'placeId': `${this.props.pubsArray.results[i].place_id}`}
+          location: {'placeId': `${this.props.pubsArray[i].place_id}`}
         }
         waypoints.push(waypoint)
       }
