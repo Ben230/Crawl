@@ -1,16 +1,5 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import Link from 'next/link';
-import Layout from '../components/layout'
-import MapView from '../components/mapView'
-import CurrentLocationMap from '../components/currentLocationMap'
-import MapWithADirectionsRenderer from '../components/directionsMap'
-
-function fetcher(url) {
-  return fetch(url).then(r => r.json());
-}
-
-var pubs =  {
+function getpubs(){
+return {
   "results": [
     {
       "geometry": {
@@ -1038,18 +1027,4 @@ var pubs =  {
   ],
   "status": "OK"
 }
-
-
-
-const Route = (props) => (
-
-
-<Layout titleName={"Map View"}>
-  <h1>Map!</h1>
-    <MapWithADirectionsRenderer pubsArray={pubs} />
-  </Layout>
-);
-
-
-
-export default Route;
+}

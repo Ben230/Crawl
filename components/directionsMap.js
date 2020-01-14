@@ -21,28 +21,28 @@ const MapWithADirectionsRenderer = compose(
     componentDidMount(props) {
       const DirectionsService = new google.maps.DirectionsService();
       console.log('props',this.props)
-      //51.5168921
-      //-0.0730285
-
-      var waypoints = [{
-        location: new google.maps.LatLng(51.5168921,-0.0730285),
-        stopover: false
-      },
-      {
-        location: new google.maps.LatLng(51.5188976,-0.0711718),
-        stopover: false
-      },
-      {
-        location: new google.maps.LatLng(51.515832,-0.0708476),
-        stopover: false
+      var origin ={'placeId': this.props.pubsArray.results[0].place_id}
+      var destination ={'placeId': this.props.pubsArray.results[this.props.pubsArray.results.length -1].place_id}
+      var waypoints = [];
+      var i;
+      for (i=1; i<this.props.pubsArray.results.length -1; i++) {
+          console.log("in loop")
+        var waypoint = {
+        location: {'placeId': `${this.props.pubsArray.results[i].place_id}`}
       }
-    ]
-      DirectionsService.route({
-        origin: new google.maps.LatLng(this.props.originlat, this.props.originlng),
-        destination: new google.maps.LatLng(51.5158977,-0.0756678),
+        waypoints.push(waypoint)
+      }
 
+      console.log('waypoints',waypoints)
+    //   var waypoints = [
+    //     {location: {'placeId': `${this.props.pubsArray.results[1].place_id}`}},
+    //   {location: {'placeId': "ChIJ4-6PJ7QcdkgRLlAsVjwGdf8"}},
+    // ]
+      DirectionsService.route({
+        origin: origin,
+        destination: destination,
         waypoints: waypoints,
-        optimizeWaypoints: true,
+        //optimizeWaypoints: true,
         travelMode: 'WALKING'
 
       }, (result, status) => {
