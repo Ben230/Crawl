@@ -11,7 +11,7 @@ class PubListView extends React.Component {
       <div>
         <ul>
         {this.props.pubs.map(pub =>(
-          <li>{pub.name}</li>
+          <li id={pub.id}>{pub.name}</li>
         )
       )}
         </ul>
