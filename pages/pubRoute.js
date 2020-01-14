@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'next/router';
 
 function About({ router: { query } }) {
-  if (query) {
+  if (query.selectedPubs) {
     const object = JSON.parse(query.selectedPubs);
     console.log(object)
     return (
