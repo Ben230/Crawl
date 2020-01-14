@@ -6,6 +6,9 @@ import { create } from "react-test-renderer";
 
 import MapView from '../components/mapView'
 
+jest.mock('../components/buttonWithObj', () => "hello")
+
+
 describe('MapView', function() {
 
   it ("has defult props lat,longstate and zoom", function() {
