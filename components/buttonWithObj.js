@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from "next/link"
+import Router from 'next/router'
+
 
 
 
@@ -10,13 +12,31 @@ class ButtonWithObj extends React.Component {
 
   }
 
+  async postRoute(data) {
+    const requestObj = {pubs: data}
+    const response = await fetch('/api/route', {
+      method: 'POST',
+      body: JSON.stringify(requestObj)
+    });
+    return await response.json();
+  }
+
+  handleClick() {
+    this.postRoute(this.props.object)
+    .then((data) => {
+      console.log("data", data)
+      const path = '/pubRoute/' + data.route._id
+      Router.push(path)
+    })
+
+
+  }
+
   render() {
     return (
       <div>
 
-          <Link href={{ pathname: this.props.pathName, query: { selectedPubs: JSON.stringify(this.props.object)  } }}>
-           <button>{this.props.buttonName}</button>
-          </Link>
+           <button onClick={() => this.handleClick()}>{this.props.buttonName}</button>
           </div>
     )
 

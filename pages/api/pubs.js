@@ -7,8 +7,19 @@ export default (req, res) => {
     return response.json();
   })
   .then((myJson) => {
+    const pubResponse = myJson.results.map(pub => {
+      const container = {}
+      container.geometry = pub.geometry
+      container.name = pub.name
+      container.place_id = pub.place_id
+      container.rating = pub.rating
+      container.vicinity = pub.vicinity
+      return container;
+    })
+
+
     res.status(200).json({
-      myJson
+      pubResponse
     });
   })
 
