@@ -27,8 +27,6 @@ componentDidMount(){
 
 
   render() {
-      // this.returnLatLng()
-
     return  this.state.locationFound ? (
           <div>
           <MapView centerLat={this.state.centerLat} centerLng={this.state.centerLng} zoom={this.state.zoom}/>

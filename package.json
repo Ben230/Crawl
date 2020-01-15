@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "13.5.0"
+  },
   "scripts": {
     "dev": "next",
     "start-server": "next",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start -p $PORT & wait-on http://localhost:3000",
     "heroku-postbuild": "npm run build",
     "cypress:open": "cypress open",
     "test": "cypress run",
-    "test:unit": "jest",
+    "test:unit": "jest --verbose",
     "test:features": "start-server-and-test start-server http://localhost:3000 test",
     "test:all": "start-server-and-test start-server http://localhost:3000 test && jest"
   },

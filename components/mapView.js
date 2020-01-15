@@ -3,7 +3,6 @@ import CurrentLocationMap from './currentLocationMap'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 import fetch from 'isomorphic-unfetch';
-import useSWR from 'swr';
 import PubListView from './pubListView'
 
 class MapView extends Component {
@@ -33,10 +32,8 @@ class MapView extends Component {
   }
 
   handleClick (pubID){
-    console.log('id', pubID)
     this.setState({
       pubsForRoute: [...this.state.pubsForRoute, pubID]
-      // pubsForRoute: 'hello'
     })
   }
 
@@ -51,7 +48,7 @@ class MapView extends Component {
         position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }}
         labelAnchor={new google.maps.Point(0, 0)}
         labelStyle={{ fontSize: "15px", padding: "8px"}}
-        onClick={() => this.handleClick(pub.id)}
+        onClick={() => this.handleClick(pub)}
         // icon="/static/images/beerIcon.jpeg"
         >
         <div></div>
@@ -68,7 +65,7 @@ class MapView extends Component {
               mapElement={ <div style={{ height: `100%` }} /> }
             />
 
-            <PubListView pubs={this.state.pubsForRoute} />
+     <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
 
           </div>
        );
