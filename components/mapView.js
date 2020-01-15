@@ -65,7 +65,7 @@ class MapView extends Component {
               mapElement={ <div style={{ height: `100%` }} /> }
             />
 
-            
+     <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
 
           </div>
        );
