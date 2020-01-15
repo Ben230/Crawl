@@ -11,7 +11,8 @@ class MapView extends Component {
     this.state = {
       pubs:[],
       pubsForRoute:[],
-      zoom: 14}
+      zoom: 14
+    }
   }
 
   static defaultProps = {
@@ -20,13 +21,15 @@ class MapView extends Component {
     zoom: 6
   }
 
-
+// http://localhost:3000/api/pubs?lat=51.516967&lng=-0.07313
 
   componentDidMount(){
-    fetch(`/api/pubs`)
+    fetch(`/api/pubs?lat=${this.props.centerLat}&lng=${this.props.centerLng}`)
     .then(response => response.json())
     .then(result => {
       var pubsArray = result.myJson.results
+      console.log('pubsArray')
+      console.log(pubsArray)
       this.setState({pubs:pubsArray})
     } );
   }
@@ -43,6 +46,7 @@ class MapView extends Component {
       <GoogleMap
       defaultCenter = { { lat: this.props.centerLat, lng: this.props.centerLng } }
       defaultZoom = { this.props.zoom }>
+
       {this.state.pubs.map(pub => (
         <MarkerWithLabel
         position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }}

@@ -12,10 +12,8 @@ class CurrentLocationMap extends React.Component {
 
 componentDidMount(){
   var currentLocationMap = this
-  console.log("Location method run")
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
-      console.log("Location method run")
       currentLocationMap.setState({locationFound: true, centerLat: position.coords.latitude,centerLng: position.coords.longitude, zoom: 14, locationFound: true} )
     });
 
@@ -32,7 +30,7 @@ componentDidMount(){
           <MapView centerLat={this.state.centerLat} centerLng={this.state.centerLng} zoom={this.state.zoom}/>
           </div>
         ) : (
-            <MapView/>
+            <h2>Loading...</h2>
         )
       }
 
