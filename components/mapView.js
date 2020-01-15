@@ -26,7 +26,7 @@ class MapView extends Component {
     fetch(`/api/pubs`)
     .then(response => response.json())
     .then(result => {
-      var pubsArray = result.myJson.results
+      var pubsArray = result.pubResponse
       this.setState({pubs:pubsArray})
     } );
   }

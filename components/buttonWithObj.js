@@ -12,10 +12,11 @@ class ButtonWithObj extends React.Component {
 
   }
 
-  async postRoute(data = {}) {
+  async postRoute(data) {
+    const requestObj = {pubs: data}
     const response = await fetch('/api/route', {
       method: 'POST',
-      body: JSON.stringify(data)
+      body: JSON.stringify(requestObj)
     });
     return await response.json();
   }
