@@ -24,10 +24,12 @@ class ButtonWithObj extends React.Component {
   handleClick() {
     this.postRoute(this.props.object)
     .then((data) => {
-      console.log("data" + data)
+      console.log("data", data)
+      const path = '/pubRoute/' + data.route._id
+      Router.push(path)
     })
 
-    Router.push('/')
+
   }
 
   render() {
