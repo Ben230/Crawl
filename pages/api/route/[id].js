@@ -13,16 +13,9 @@ const RoutesSchema = new mongoose.Schema(
 
 const Route = mongoose.models.Route || mongoose.model("Route", RoutesSchema);
 
-export default async (req, res) => {
+  export default async (req, res) => {
   await connectToDb();
-  
-
-  const route = await Route.find({_id: req.query.id });
-
-
-
-
-
-  res.status(200).json( route )
+  const route = await Route.findById({_id: req.query.id });
+  res.status(200).json( route.pubs )
 
 }
