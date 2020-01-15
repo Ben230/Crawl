@@ -31,9 +31,9 @@ class MapView extends Component {
     } );
   }
 
-  handleClick (pubID){
+  handleClick (pub){
     this.setState({
-      pubsForRoute: [...this.state.pubsForRoute, pubID]
+      pubsForRoute: [...this.state.pubsForRoute, pub]
     })
   }
 
