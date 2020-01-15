@@ -6,14 +6,15 @@ class CrawlRouteRender extends React.Component {
 
   constructor(props) {
     super(props)
+    this.state = {pubRoute: null}
   }
 
 
-  componentDidMount() {
+  componentDidUpdate() {
     fetch(`/api/route/${this.props.routeId}`)
     .then(response => response.json())
     .then(result => {
-      this.setState({pubsRoutes:pubsArray})
+      this.setState({pubsRoutes: result})
     } );
 
   }

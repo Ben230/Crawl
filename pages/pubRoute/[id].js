@@ -8,7 +8,7 @@ const PubRoute = () => (
 
 <Layout titleName={"Crawl Route"}>
   <div>
-    {useRouter().query.id}
+    <CrawlRouteRender routeId={useRouter().query.id} />
   </div>
   </Layout>
 
