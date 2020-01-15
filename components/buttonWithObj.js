@@ -4,6 +4,7 @@ import Router from 'next/router'
 
 
 
+
 class ButtonWithObj extends React.Component {
 
   constructor(props) {
@@ -11,8 +12,20 @@ class ButtonWithObj extends React.Component {
 
   }
 
+  async postRoute(data = {}) {
+    const response = await fetch('/api/route', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+    return await response.json();
+  }
+
   handleClick() {
-    
+    this.postRoute(this.props.object)
+    .then((data) => {
+      console.log("data" + data)
+    })
+
     Router.push('/')
   }
 
