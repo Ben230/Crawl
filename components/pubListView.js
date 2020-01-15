@@ -5,23 +5,27 @@ import ButtonWithObj from './buttonWithObj';
 class PubListView extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      buttonIsHidden: true
+    }
 
   };
 
   render() {
     return(
       <div>
-      <div>
-        <ul>
-        {this.props.pubs.map(pub =>(
-          <li id={pub.id}>{pub.name}</li>
-        )
-      )}
-        </ul>
-      </div>
 
-      <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>
-      </div>
+      {this.props.pubs.map(pub =>(
+        <div id={pub.id}>
+        <h3 >{pub.name}</h3>
+        <p >Pub Rating: {pub.rating}</p>
+        <p >address: {pub.vicinity}</p>
+        </div>
+      )
+    )}
+
+    {!this.props.buttonIsHidden && <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>}
+    </div>
 
     )
   }
