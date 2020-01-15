@@ -20,7 +20,6 @@ const MapWithADirectionsRenderer = compose(
   lifecycle({
     componentDidMount(props) {
       const DirectionsService = new google.maps.DirectionsService();
-
       var origin ={'placeId': this.props.pubs[0].place_id}
       var arrayLength = this.props.pubs.length - 1
       var destination ={
