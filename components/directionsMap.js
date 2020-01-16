@@ -56,7 +56,7 @@ const MapWithADirectionsRenderer = compose(
             orderPubs: orderPubs,
             directions: result,
           });
-
+          console.log(this.state.orderPubs)
         } else {
           console.error(`error fetching directions ${result}`);
         }
