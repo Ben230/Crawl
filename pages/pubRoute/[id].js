@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
-import CrawlRouteRender from '../../components/CrawlRouteRender';
+import CrawlRouteRender from '../../components/crawlRouteRender';
 
 
 const PubRoute = () => (
