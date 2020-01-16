@@ -41,6 +41,7 @@ class MapView extends Component {
           labelAnchor={new google.maps.Point(0, 0)}
           labelStyle={{ fontSize: "15px", padding: "8px"}}
           onClick={() => this.handleClick(pub)}
+          icon={{url: "/static/images/beer-mug.png", scaledSize: new google.maps.Size(30,30)}}
           >
             <div></div>
           </MarkerWithLabel>
