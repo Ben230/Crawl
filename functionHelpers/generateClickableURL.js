@@ -4,7 +4,6 @@ function generateClickableURL(pubs) {
   var destination_place_id = pubs[pubs.length -1].place_id
   var destination_name = pubs[pubs.length -1].name
 
-
   if (pubs.length > 2) {
     var waypoint_place_id = ""
     var waypoint_name = ""
