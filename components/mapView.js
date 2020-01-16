@@ -23,7 +23,7 @@ class MapView extends Component {
 
 
   componentDidMount(){
-    fetch(`/api/pubs`)
+    fetch(`/api/pubs?lat=${this.props.centerLat}&lng=${this.props.centerLng}`)
     .then(response => response.json())
     .then(result => {
       var pubsArray = result.pubResponse
