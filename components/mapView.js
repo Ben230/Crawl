@@ -61,7 +61,7 @@ class MapView extends Component {
           <div>
 
             <GoogleMapContainer
-              containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+              containerElement={ <div style={{ height: `400px`, width: '100%' }} /> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
 
