@@ -14,14 +14,6 @@ class MapView extends Component {
       zoom: 14}
   }
 
-  static defaultProps = {
-    centerLat: 51.516967,
-    centerLng: -0.073133,
-    zoom: 6
-  }
-
-
-
   componentDidMount(){
     fetch(`/api/pubs?lat=${this.props.centerLat}&lng=${this.props.centerLng}`)
     .then(response => response.json())
@@ -58,20 +50,14 @@ class MapView extends Component {
 
       return(
           <div>
-
             <GoogleMapContainer
               containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
-
             <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
-
           </div>
        );
    }
-
 };
-
-
 
 export default MapView;

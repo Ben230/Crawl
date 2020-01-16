@@ -15,13 +15,8 @@ class CurrentLocationMap extends React.Component {
         navigator.geolocation.getCurrentPosition(function(position){
           currentLocationMap.setState({locationFound: true, centerLat: position.coords.latitude,centerLng: position.coords.longitude, zoom: 14, locationFound: true} )
         });
-
       }
     }
-
-
-
-
 
     render() {
       return  this.state.locationFound ? (
@@ -29,11 +24,9 @@ class CurrentLocationMap extends React.Component {
         <MapView centerLat={this.state.centerLat} centerLng={this.state.centerLng} zoom={this.state.zoom}/>
         </div>
       ) : (
-        <MapView/>
+        <h2>Loading...</h2>
       )
     }
-
-
   }
 
   export default CurrentLocationMap;

@@ -1,5 +1,6 @@
 import connectToDb from './db';
 import mongoose from 'mongoose';
+
 const RoutesSchema = new mongoose.Schema(
   {pubs: [{
             geometry:{
@@ -19,12 +20,10 @@ const Route = mongoose.models.Route || mongoose.model("Route", RoutesSchema);
 
 export default async (req, res) => {
   await connectToDb();
-  var routeObj = JSON.parse(req.body)
-  var route = new Route(routeObj)
+  var route = new Route(JSON.parse(req.body))
   route.save(function(err,route) {
     if (err) return console.log(err);
   })
-
+  
   res.status(200).json({ route })
-
 }

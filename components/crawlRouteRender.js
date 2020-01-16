@@ -1,6 +1,5 @@
 import React from 'react';
 import MapWithADirectionsRenderer from './directionsMap'
-import { withRouter } from 'next/router';
 
 class CrawlRouteRender extends React.Component {
 
@@ -14,8 +13,7 @@ class CrawlRouteRender extends React.Component {
     .then(response => response.json())
     .then(result => {
       this.setState({pubsRoutes: result})
-    } );
-
+    });
   }
 
   render() {

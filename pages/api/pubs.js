@@ -17,10 +17,8 @@ export default (req, res) => {
       return container;
     })
 
-
     res.status(200).json({
       pubResponse
     });
   })
-
 };
