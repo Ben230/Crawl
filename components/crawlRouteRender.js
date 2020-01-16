@@ -6,7 +6,7 @@ class CrawlRouteRender extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {pubRoute: null}
+    this.state = {}
   }
 
   componentDidUpdate() {
