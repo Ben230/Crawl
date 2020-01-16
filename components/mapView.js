@@ -64,7 +64,8 @@ class MapView extends Component {
               containerElement={ <div style={{ height: `600px`, width: '100%' }} /> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
-            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
+            <h5 id="touchInstructions"> Touch the pints and we'll build the crawl!</h5>
+            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={this.state.pubsForRoute.length > 0}/>
           </div>
        );
    }

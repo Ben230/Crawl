@@ -1,4 +1,8 @@
 
+
+
+
+
   #mainTitle {
   text-align: center;
 
@@ -47,13 +51,18 @@
 }
 
   #calRoute {
+    opacity: 0.5;
     margin: 0;
      position: absolute;
-     top: 90%;
+     top: 78%;
      left: 50%;
      -ms-transform: translate(-50%, -50%);
      transform: translate(-50%, -50%);
 
 
 
+  }
+
+  #touchInstructions {
+    text-align: center;
   }
