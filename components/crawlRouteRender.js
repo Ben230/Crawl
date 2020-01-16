@@ -26,11 +26,10 @@ class CrawlRouteRender extends React.Component {
 
   render() {
 
-    return this.state.pubsRoutes ? (<div>
+    return this.state.pubsRoutes ? (
+      <div>
       <MapWithADirectionsRenderer pubs={this.state.pubsRoutes} />
       <a href={this.state.clickableURL}> Click here to show the route on google maps </a>
-
-    
       </div>
     ) : (
       <h2>Loading...</h2>
