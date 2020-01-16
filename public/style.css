@@ -8,7 +8,7 @@
 
     margin: 0;
      position: absolute;
-     top: 43%;
+     top: 40%;
      left: 50%;
      -ms-transform: translate(-50%, -50%);
      transform: translate(-50%, -50%);
@@ -17,7 +17,7 @@
   #findPubsNearMe {
     margin: 0;
      position: absolute;
-     top: 85%;
+     top: 90%;
      left: 50%;
      -ms-transform: translate(-50%, -50%);
      transform: translate(-50%, -50%);
@@ -25,3 +25,15 @@
 
 
 }
+
+  #calRoute {
+    margin: 0;
+     position: absolute;
+     top: 90%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+
+
+
+  }

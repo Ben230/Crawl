@@ -16,7 +16,7 @@ componentDidMount(){
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       console.log("Location method run")
-      currentLocationMap.setState({locationFound: true, centerLat: position.coords.latitude,centerLng: position.coords.longitude, zoom: 15.5, locationFound: true} )
+      currentLocationMap.setState({locationFound: true, centerLat: position.coords.latitude,centerLng: position.coords.longitude, zoom: 15, locationFound: true} )
     });
 
   }
