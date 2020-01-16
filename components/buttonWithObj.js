@@ -1,15 +1,10 @@
 import React from 'react'
-import Link from "next/link"
 import Router from 'next/router'
-
-
-
 
 class ButtonWithObj extends React.Component {
 
   constructor(props) {
     super(props)
-
   }
 
   async postRoute(data) {
@@ -24,35 +19,19 @@ class ButtonWithObj extends React.Component {
   handleClick() {
     this.postRoute(this.props.object)
     .then((data) => {
-      console.log("data", data)
       const path = '/pubRoute/' + data.route._id
       Router.push(path)
     })
-
-
   }
 
   render() {
     return (
       <div>
 
-           <button onClick={() => this.handleClick()}>{this.props.buttonName}</button>
-          </div>
+      <button onClick={() => this.handleClick()}>{this.props.buttonName}</button>
+      </div>
     )
-
-
-
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 export default ButtonWithObj;

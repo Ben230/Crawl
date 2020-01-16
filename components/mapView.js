@@ -43,17 +43,16 @@ class MapView extends Component {
       <GoogleMap
       defaultCenter = { { lat: this.props.centerLat, lng: this.props.centerLng } }
       defaultZoom = { this.props.zoom }>
-      {this.state.pubs.map(pub => (
-        <MarkerWithLabel
-        position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }}
-        labelAnchor={new google.maps.Point(0, 0)}
-        labelStyle={{ fontSize: "15px", padding: "8px"}}
-        onClick={() => this.handleClick(pub)}
-        // icon="/static/images/beerIcon.jpeg"
-        >
-        <div></div>
-        </MarkerWithLabel>
-      ))}
+        {this.state.pubs.map(pub => (
+          <MarkerWithLabel
+          position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }}
+          labelAnchor={new google.maps.Point(0, 0)}
+          labelStyle={{ fontSize: "15px", padding: "8px"}}
+          onClick={() => this.handleClick(pub)}
+          >
+            <div></div>
+          </MarkerWithLabel>
+        ))}
       </GoogleMap>
       ));
 
@@ -65,7 +64,7 @@ class MapView extends Component {
               mapElement={ <div style={{ height: `100%` }} /> }
             />
 
-     <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
+            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
 
           </div>
        );

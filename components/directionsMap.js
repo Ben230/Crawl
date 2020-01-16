@@ -78,7 +78,7 @@ const MapWithADirectionsRenderer = compose(
   >
     {props.directions && <DirectionsRenderer directions={props.directions} />}
   </GoogleMap>
-    {props.orderPubs && <PubListView pubs={props.orderPubs} buttonIsHidden={true} />}
+  {props.orderPubs && <PubListView pubs={props.orderPubs} buttonIsHidden={true} />}
   </div>
 
 );
