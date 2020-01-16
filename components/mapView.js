@@ -12,6 +12,7 @@ class MapView extends Component {
       pubs:[],
       pubsForRoute:[],
       zoom: 14}
+
   }
 
   componentDidMount(){
@@ -29,6 +30,14 @@ class MapView extends Component {
     })
   }
 
+  iconSelector(pub) {
+    if (!this.state.pubsForRoute.includes(pub)){
+      return "/static/images/beer-mug.png"
+    }else {
+      return "/static/images/beer-mug-green-tick.png"
+    }
+  }
+
   render() {
 
     const GoogleMapContainer = withGoogleMap(props => (
@@ -41,7 +50,7 @@ class MapView extends Component {
           labelAnchor={new google.maps.Point(0, 0)}
           labelStyle={{ fontSize: "15px", padding: "8px"}}
           onClick={() => this.handleClick(pub)}
-          icon={{url: "/static/images/beer-mug.png", scaledSize: new google.maps.Size(30,30)}}
+          icon={{url: this.iconSelector(pub), scaledSize: new google.maps.Size(30,30)}}
           >
             <div></div>
           </MarkerWithLabel>
