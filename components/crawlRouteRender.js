@@ -12,6 +12,7 @@ class CrawlRouteRender extends React.Component {
   componentDidUpdate(prevProps) {
     console.log("didupdate")
     if (this.props.routeId !== prevProps.routeId) {
+      console.log(this.props.routeId)
     fetch(`/api/route/${this.props.routeId}`)
     .then(response => response.json())
     .then(result => {
@@ -30,10 +31,10 @@ class CrawlRouteRender extends React.Component {
       <MapWithADirectionsRenderer pubs={this.state.pubsRoutes} />
       <a href={this.state.clickableURL}> Click here to show the route on google maps </a>
 
-    
+
       </div>
     ) : (
-      <h2>Loading...</h2>
+      <img className="loadingGiff" src="/static/giffImage/pub-crawl-loading.gif" />
     )
   }
 }

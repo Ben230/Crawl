@@ -6,8 +6,9 @@ const Index = () => (
   <Layout titleName={"Crawl"}>
     <div>
 
-
-    <img id="homePageImage" src="/static/images/crawl-duff-beer.png" height="500" width="500"/>
+    <div id="imgHome">
+    <img id="homePageImage" src="/static/images/crawl-duff-beer-2.png" />
+    </div>
 
     <Link href="/map">
     <button id="findPubsNearMe" type="button" class="btn btn-primary btn-lg">Find Pubs Near Me!</button>
