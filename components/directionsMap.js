@@ -1,14 +1,7 @@
-import React from "react";
+import React from 'react';
 import PubListView from '../components/pubListView'
-
-
 const { compose, withProps, lifecycle } = require("recompose");
-const {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  DirectionsRenderer,
-} = require("react-google-maps");
+const { withScriptjs, withGoogleMap, GoogleMap, DirectionsRenderer, } = require("react-google-maps");
 
 const MapWithADirectionsRenderer = compose(
   withProps({
@@ -63,7 +56,7 @@ const MapWithADirectionsRenderer = compose(
             orderPubs: orderPubs,
             directions: result,
           });
-
+          console.log(this.state.orderPubs)
         } else {
           console.error(`error fetching directions ${result}`);
         }
@@ -73,12 +66,11 @@ const MapWithADirectionsRenderer = compose(
 )(props =>
   <div>
   <GoogleMap
-    defaultZoom={7}
-    defaultCenter={origin}
+  defaultZoom={7}
   >
-    {props.directions && <DirectionsRenderer directions={props.directions} />}
+  {props.directions && <DirectionsRenderer directions={props.directions} />}
   </GoogleMap>
-    {props.orderPubs && <PubListView pubs={props.orderPubs} buttonIsHidden={true} />}
+  {props.orderPubs && <PubListView pubs={props.orderPubs} buttonIsHidden={true} />}
   </div>
 
 );
