@@ -4,7 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps
 const { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 import fetch from 'isomorphic-unfetch';
 import PubListView from './pubListView'
-
+import {beerImage} from '../public/static/images/beer.png'
 class MapView extends Component {
   constructor(props) {
     super(props)
@@ -43,13 +43,13 @@ class MapView extends Component {
       <GoogleMap
       defaultCenter = { { lat: this.props.centerLat, lng: this.props.centerLng } }
       defaultZoom = { this.props.zoom }>
-      {this.state.pubs.map(pub => (
+        {this.state.pubs.map(pub => (
         <MarkerWithLabel
         position={{ lat: pub.geometry.location.lat, lng: pub.geometry.location.lng }}
+        icon= '/static/images/beer.png'
         labelAnchor={new google.maps.Point(0, 0)}
-        labelStyle={{ fontSize: "15px", padding: "8px"}}
+        labelStyle= {{ fontSize: "15px", padding: "8px"}}
         onClick={() => this.handleClick(pub)}
-        // icon="/static/images/beerIcon.jpeg"
         >
         <div></div>
         </MarkerWithLabel>
