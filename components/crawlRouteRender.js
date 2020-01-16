@@ -19,6 +19,9 @@ class CrawlRouteRender extends React.Component {
   render() {
     return this.state.pubsRoutes ? (
       <MapWithADirectionsRenderer pubs={this.state.pubsRoutes} />
+      <p>
+      {this.state.pubRoutes}
+      </p>
     ) : (
       <h2>Loading...</h2>
     )
