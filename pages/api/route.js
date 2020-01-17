@@ -22,7 +22,7 @@ export default async (req, res) => {
   await connectToDb();
   var route = new Route(JSON.parse(req.body))
   console.log("route", route)
-  route.save(function(err,route) {
+  await route.save(function(err,route) {
     console.log(err)
     console.log("the route is:")
     console.log(route)
