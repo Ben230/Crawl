@@ -6,7 +6,7 @@ const { withScriptjs, withGoogleMap, GoogleMap, DirectionsRenderer, } = require(
 const MapWithADirectionsRenderer = compose(
   withProps({
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `600px` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withGoogleMap,

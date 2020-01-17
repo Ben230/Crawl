@@ -60,12 +60,13 @@ class MapView extends Component {
 
       return(
           <div>
+            <h5 id="touchInstructions"> Touch the pints and we'll build the crawl!</h5>
             <GoogleMapContainer
               containerElement={ <div style={{ height: `600px`, width: '100%' }} /> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
-            <h5 id="touchInstructions"> Touch the pints and we'll build the crawl!</h5>
-            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={this.state.pubsForRoute.length > 0}/>
+            
+            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={this.state.pubsForRoute.length <= 0}/>
           </div>
        );
    }

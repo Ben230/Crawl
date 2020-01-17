@@ -39,7 +39,7 @@ class PubListView extends React.Component {
 
       </div>
       <div className="button">
-        {this.props.buttonIsHidden && <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>}
+        {!this.props.buttonIsHidden && <ButtonWithObj  pathName="/pubRoute" object={this.props.pubs} buttonName="Calculate Crawl!"/>}
       </div>
 
 
