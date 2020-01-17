@@ -10,7 +10,6 @@ class CrawlRouteRender extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-
     console.log("didupdate")
     if (this.props.routeId !== prevProps.routeId) {
       console.log(this.props.routeId)
@@ -19,7 +18,6 @@ class CrawlRouteRender extends React.Component {
     .then(result => {
       console.log("didupdate in fetch")
       const clickableURL = generateClickableURL(result)
-
       this.setState({pubsRoutes: result, clickableURL: clickableURL})
     }
     );
@@ -31,16 +29,11 @@ class CrawlRouteRender extends React.Component {
 
     return this.state.pubsRoutes ? (<div>
 
-
-
-      <MapWithADirectionsRenderer pubs={this.state.pubsRoutes} />
       <a href={this.state.clickableURL}> Click here to show the route on google maps </a>
-      <form action="www.bbc.com">
-                {console.log(this.state.clickableURL)}
-               <input type="submit" id="openMaps" class="btn btn-primary btn-lg"value="Open In Maps"/>
-            </form>
+      <MapWithADirectionsRenderer pubs={this.state.pubsRoutes} />
 
-  <a href={this.state.clickableURL}> Click here to show the route on google maps </a>
+
+
       </div>
     ) : (
       <img className="loadingGiff" src="/static/giffImage/pub-crawl-loading.gif" />

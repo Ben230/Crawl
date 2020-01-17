@@ -3,6 +3,9 @@ module.exports = {
     GOOGLE_MAPS_API_KEY_CLIENT: process.env.GOOGLE_MAPS_API_KEY_CLIENT,
     GOOGLE_MAPS_API_KEY_SERVER: process.env.GOOGLE_MAPS_API_KEY_SERVER,
   },
+  devIndicators: {
+  autoPrerender: false,
+},
 }
 
 
