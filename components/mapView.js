@@ -12,6 +12,7 @@ class MapView extends Component {
       pubs:[],
       pubsForRoute:[],
       zoom: 14}
+
   }
 
   componentDidMount(){
@@ -29,6 +30,14 @@ class MapView extends Component {
     })
   }
 
+  iconSelector(pub) {
+    if (!this.state.pubsForRoute.includes(pub)){
+      return "/static/images/beer-mug.png"
+    }else {
+      return "/static/images/beer-mug-green-tick.png"
+    }
+  }
+
   render() {
 
     const GoogleMapContainer = withGoogleMap(props => (
@@ -41,6 +50,7 @@ class MapView extends Component {
           labelAnchor={new google.maps.Point(0, 0)}
           labelStyle={{ fontSize: "15px", padding: "8px"}}
           onClick={() => this.handleClick(pub)}
+          icon={{url: this.iconSelector(pub), scaledSize: new google.maps.Size(30,30)}}
           >
             <div></div>
           </MarkerWithLabel>
@@ -50,11 +60,13 @@ class MapView extends Component {
 
       return(
           <div>
+            <h5 id="touchInstructions"> Touch the pints and we'll build the crawl!</h5>
             <GoogleMapContainer
-              containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+              containerElement={ <div style={{ height: `600px`, width: '100%' }} /> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
-            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={false}/>
+
+            <PubListView pubs={this.state.pubsForRoute} buttonIsHidden={this.state.pubsForRoute.length <= 0}/>
           </div>
        );
    }

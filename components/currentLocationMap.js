@@ -13,7 +13,7 @@ class CurrentLocationMap extends React.Component {
       var currentLocationMap = this
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position){
-          currentLocationMap.setState({locationFound: true, centerLat: position.coords.latitude,centerLng: position.coords.longitude, zoom: 14, locationFound: true} )
+          currentLocationMap.setState({locationFound: true, centerLat: position.coords.latitude,centerLng: position.coords.longitude, zoom: 15, locationFound: true} )
         });
       }
     }
@@ -24,7 +24,7 @@ class CurrentLocationMap extends React.Component {
         <MapView centerLat={this.state.centerLat} centerLng={this.state.centerLng} zoom={this.state.zoom}/>
         </div>
       ) : (
-        <h2>Loading...</h2>
+        <img  className="loadingGiff" src="/static/giffImage/pub-crawl-loading.gif" />
       )
     }
   }

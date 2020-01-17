@@ -1,0 +1,74 @@
+
+
+
+
+
+  #mainTitle {
+  text-align: center;
+
+  }
+
+  #imgHome {
+    width: 100%;
+    height: 100%;
+  }
+  #homePageImage {
+    max-width:175%;
+    max-height:100%;
+    margin: 0;
+     position: fixed;;
+     top: 46%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     width: 100%;
+     hight: 100%;
+    height: auto;
+  }
+
+  .loadingGiff {
+    max-width:50%;
+    max-height:50%;
+    margin: 0;
+     position: fixed;;
+     top: 50%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+
+  }
+
+  #findPubsNearMe {
+    margin: 0;
+     position: absolute;
+     top: 90%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+
+
+
+}
+
+  #calRoute {
+    opacity: 0.5;
+    margin: 0;
+     position: absolute;
+     top: 80%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+   }
+   #openMaps {
+     opacity: 0.5;
+     margin: 0;
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+   }
+
+  #touchInstructions {
+    text-align: center;
+  }

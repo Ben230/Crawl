@@ -28,8 +28,8 @@ class ButtonWithObj extends React.Component {
     return (
       <div>
 
-      <button onClick={() => this.handleClick()}>{this.props.buttonName}</button>
-      </div>
+           <button id="calRoute" type="button" class="btn btn-primary btn-lg" onClick={() => this.handleClick()}>{this.props.buttonName}</button>
+          </div>
     )
   }
 }
