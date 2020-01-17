@@ -21,9 +21,11 @@ const Route = mongoose.models.Route || mongoose.model("Route", RoutesSchema);
 export default async (req, res) => {
   await connectToDb();
   var route = new Route(JSON.parse(req.body))
+  console.log("route", route)
   route.save(function(err,route) {
-    if (err) return console.log(err);
+    if (err) {
+      console.err(err);
+    }
   })
-  
   res.status(200).json({ route })
 }

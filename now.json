@@ -2,7 +2,10 @@
   "build": {
     "env": {
       "GOOGLE_MAPS_API_KEY_CLIENT": "@gmaps-api-client",
-      "GOOGLE_MAPS_API_KEY_SERVER": "@gmaps-api-server"
+      "GOOGLE_MAPS_API_KEY_SERVER": "@gmaps-api-server",
+      "DB_LINK": "mongodb+srv://cluster0-jygbk.mongodb.net/crawl",
+      "DB_USER": "Crawl_1",
+      "DB_PASSWORD": "crawl"
     }
   }
 
