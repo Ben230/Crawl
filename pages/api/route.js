@@ -23,7 +23,12 @@ export default async (req, res) => {
   var route = new Route(JSON.parse(req.body))
   console.log("route", route)
   route.save(function(err,route) {
-    if (err) return console.log(err);
+    console.log(err)
+    console.log("the route is:")
+    console.log(route)
+    if (err) {
+      console.err(err);
+    }
   })
 
   res.status(200).json({ route })
