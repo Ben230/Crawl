@@ -20,6 +20,8 @@ const Route = mongoose.models.Route || mongoose.model("Route", RoutesSchema);
 
 export default async (req, res) => {
   await connectToDb();
+  console.log(req.query.id)
   const route = await Route.findById({_id: req.query.id });
+  console.err(route)
   res.status(200).json( route.pubs )
 }
