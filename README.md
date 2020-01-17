@@ -5,13 +5,12 @@ Created by as part of our final project at Makers Academy!
 
 ## Tech stack
 ### Application
-We use React and Next.js to build a full stack JS application
-MongoDB for our database
-Travis CI and deployed in Now
+* We use React and Next.js to create our full stack application
+* Travis CI for our deployment pipelines and hosted in Now
 
 ### Testing
-JEST and Enzyme for unit tests
-Cypress for functional tests
+* JEST and Enzyme for unit tests
+* Cypress for functional tests
 
 ## Set up for local build
 
