@@ -10,7 +10,7 @@ class CrawlRouteRender extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    
+
     console.log("didupdate")
     if (this.props.routeId !== prevProps.routeId) {
       console.log(this.props.routeId)
@@ -34,11 +34,13 @@ class CrawlRouteRender extends React.Component {
 
 
       <MapWithADirectionsRenderer pubs={this.state.pubsRoutes} />
-      <form action={this.state.clickableURL}>
+      <a href={this.state.clickableURL}> Click here to show the route on google maps </a>
+      <form action="www.bbc.com">
+                {console.log(this.state.clickableURL)}
                <input type="submit" id="openMaps" class="btn btn-primary btn-lg"value="Open In Maps"/>
             </form>
 
-
+  <a href={this.state.clickableURL}> Click here to show the route on google maps </a>
       </div>
     ) : (
       <img className="loadingGiff" src="/static/giffImage/pub-crawl-loading.gif" />
